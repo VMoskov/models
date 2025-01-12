@@ -16,6 +16,10 @@
 
 from absl import app
 
+# to make it work in colab
+import sys
+sys.path.append('/content/models')
+
 from official.common import flags as tfm_flags
 from official.projects.maskconver.configs import maskconver as maskconver_cfg  # pylint: disable=unused-import
 from official.projects.maskconver.configs import multiscale_maskconver as multiscale_maskconver_cfg  # pylint: disable=unused-import
