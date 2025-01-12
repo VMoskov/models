@@ -17,7 +17,7 @@ import dataclasses
 
 from typing import List, Optional
 from official.modeling import hyperparams
-from official.vision.configs.google import backbones
+from official.vision.configs import backbones
 
 
 @dataclasses.dataclass
