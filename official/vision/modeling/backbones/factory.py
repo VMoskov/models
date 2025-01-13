@@ -52,6 +52,12 @@ from official.modeling import hyperparams
 _REGISTERED_BACKBONE_CLS = {}
 
 
+def print_registered_backbones():
+  print('REGISTERED BACKBONES:')
+  for backbone in _REGISTERED_BACKBONE_CLS.keys():
+    print(f'BACKBONE: {backbone}')
+
+
 def register_backbone_builder(key: str):
   """Decorates a builder of backbone class.
 
@@ -99,6 +105,8 @@ def build_backbone(input_specs: Union[tf_keras.layers.InputSpec,
   Returns:
     A `tf_keras.Model` instance of the backbone.
   """
+  print_registered_backbones()
+  print(f'BACKBONE CONFIG: {backbone_config}')
   backbone_builder = registry.lookup(_REGISTERED_BACKBONE_CLS,
                                      backbone_config.type)
 

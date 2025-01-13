@@ -21,6 +21,12 @@ from official.core import registry
 _REGISTERED_CONFIGS = {}
 
 
+def print_registered_config():
+  print('REGISTERED_CONFIGS:')
+  for config in _REGISTERED_CONFIGS.keys():
+    print(f'CONFIG: {config}')
+
+
 def register_config_factory(name):
   """Register ExperimentConfig factory method."""
   return registry.register(_REGISTERED_CONFIGS, name)
