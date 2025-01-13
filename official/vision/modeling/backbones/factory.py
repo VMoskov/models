@@ -107,6 +107,8 @@ def build_backbone(input_specs: Union[tf_keras.layers.InputSpec,
   """
   print_registered_backbones()
   print(f'BACKBONE CONFIG: {backbone_config}')
+  backbone_config.type = 'resnet'
+  print(f'BACKBONE CONFIG TYPE: {backbone_config.type}')
   backbone_builder = registry.lookup(_REGISTERED_BACKBONE_CLS,
                                      backbone_config.type)
 

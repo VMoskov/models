@@ -183,6 +183,7 @@ def build_multiscale_maskconver_model(
   """Builds multiscale MaskConver model."""
   norm_activation_config = model_config.norm_activation
   if not backbone:
+    print(f'MODEL CONFIG: {model_config}')
     backbone = backbones.factory.build_backbone(
         input_specs=input_specs,
         backbone_config=model_config.backbone,
